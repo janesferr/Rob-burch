@@ -1,5 +1,5 @@
 :root {
-  --bg: #f5efe5;
+  --bg: #d4ead7;
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: #fffdf8;
   --text: #1f2b24;
@@ -19,8 +19,8 @@ body {
   font-family: "Source Sans 3", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(236, 200, 144, 0.45), transparent 30%),
-    linear-gradient(180deg, #f3ebdf 0%, #f8f5ee 45%, #efe6da 100%);
+    radial-gradient(circle at top left, rgba(143, 198, 153, 0.58), transparent 30%),
+    linear-gradient(180deg, #e0f0e2 0%, #d4ead7 45%, #c5e1c9 100%);
 }
 
 a {
