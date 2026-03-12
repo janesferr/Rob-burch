@@ -1,0 +1,259 @@
+:root {
+  --bg: #f5efe5;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #fffdf8;
+  --text: #1f2b24;
+  --muted: #5f6d63;
+  --accent: #1f6b57;
+  --accent-dark: #174f41;
+  --line: rgba(31, 43, 36, 0.12);
+  --shadow: 0 18px 45px rgba(31, 43, 36, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(236, 200, 144, 0.45), transparent 30%),
+    linear-gradient(180deg, #f3ebdf 0%, #f8f5ee 45%, #efe6da 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav,
+.hero-content,
+.section {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0 2rem;
+}
+
+.brand,
+h1,
+h2,
+h3 {
+  font-family: "Libre Baskerville", serif;
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-content {
+  margin: auto;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.95), rgba(255, 255, 255, 0.64));
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.18rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: var(--accent-dark);
+}
+
+.button-secondary {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.15;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card,
+.about-panel,
+.contact-card {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card h3,
+.about-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  font-size: 1.35rem;
+}
+
+.card p,
+.about p,
+.contact p,
+.about-panel li {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.03rem;
+}
+
+.highlight {
+  background: linear-gradient(180deg, rgba(31, 107, 87, 0.1), rgba(255, 255, 255, 0.86));
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(31, 107, 87, 0.12);
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.contact {
+  padding-bottom: 6rem;
+}
+
+.contact-card {
+  max-width: 38rem;
+  margin-top: 1.75rem;
+  background: var(--surface-strong);
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 1.25rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  h1 {
+    max-width: none;
+  }
+
+  .section {
+    padding: 4rem 1.25rem;
+  }
+}
